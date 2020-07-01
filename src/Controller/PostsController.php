@@ -12,9 +12,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
+
 class PostsController extends AbstractController
 {
-
 
     /** @var PostRepository $postRepository */
     private $postRepository;
@@ -113,7 +113,8 @@ class PostsController extends AbstractController
     {
         $query = $request->query->get('q');
         $posts = $this->postRepository->searchByQuery($query);
-        var_dump($posts);
+//        var_dump($posts);
+
 
         return $this->render('blog/query_post.html.twig', [
             'posts' => $posts
